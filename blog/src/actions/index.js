@@ -17,3 +17,12 @@ export const fetchUsers = () => async dispatch => {
         payload: res.data
     });
 };
+
+export const fetchUser = (id) => async dispatch => {
+    const res = await jsonPlaceholder.get(`/users/${id}`);
+
+    dispatch({
+        type: 'FETCH_USER',
+        payload: res.data
+    })
+} 
